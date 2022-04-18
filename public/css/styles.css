@@ -29,9 +29,18 @@ body {
 }
 
 .hero {
-    height: 40vh;
+    display: flex;
+    align-items: flex-end;
+    height: 50vh;
     width: 100%;
     background-image: linear-gradient(rgb(114, 180, 219), rgb(213, 242, 255));
+}
+
+.hero .wave{
+    background-image: url("../images/wave.svg");
+    background-size: cover;
+    height: 40%;
+    width: 100%;
 }
 
 .introduction {
@@ -41,7 +50,7 @@ body {
     justify-content: center;
     text-align: center;
     width: 100%;
-    height: 80vh;
+    height: 50vh;
     background-image: linear-gradient(#0099ff, rgb(33, 32, 42));
     color: white;
     gap: 20px;
