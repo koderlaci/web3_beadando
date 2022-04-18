@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: Roboto;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    background-color: transparent;
+}
+
+.navbar .item {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.navbar .item:hover {
+    color: rgb(217, 240, 252);
+    transition: all 0.5s;
+}
+
+.hero {
+    height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(rgb(114, 180, 219), rgb(213, 242, 255));
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    background-image: linear-gradient(#0099ff, rgb(33, 32, 42));
+    color: white;
+    gap: 20px;
+}
+
+.introduction .title {
+    font-size: 40px;
+}
+
+.introduction .subtitle {
+    font-size: 25px;
+}
+
+.introduction button {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 0;
+    background-color: rgb(255, 255, 255);
+    color: #0064a6;
+    cursor: pointer;
+}
+
+.introduction button:hover {
+    transition: all 0.5s;
+    background-color: rgb(217, 240, 252);
+}
