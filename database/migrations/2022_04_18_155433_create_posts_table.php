@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("fishName");
             $table->integer("price");
-            $table->string("seller");
+            $table->foreignId("seller_id");
             $table->timestamps();
         });
     }
