@@ -22,6 +22,8 @@ Route::get("/welcome", [Controllers\WelcomeController::class, 'index'])->name("h
 
 Route::get("/market", [Controllers\PostController::class, 'create'])->name("market");
 
+Route::get("/login", [Controllers\LoginController::class, 'show'])->name("login");
+
 Route::get("/registration", [Controllers\RegistrationController::class, 'show'])->name("registration");
 
 Route::post("/market", [Controllers\PostController::class, 'store']);

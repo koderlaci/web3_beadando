@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/market.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/registration.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
         <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300&family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -19,7 +20,9 @@
                     <a href="{{ URL::route('market'); }}">Market</a>
                 </span>
             </div>
-            <span class="item">Sign in</span>
+            <span class="item">
+                <a href="{{ URL::route('login'); }}">Sign in</a>
+            </span>
         </div>
         <main>
             @yield('content')

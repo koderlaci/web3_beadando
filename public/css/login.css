@@ -1,4 +1,4 @@
-.registration-container {
+.login-container {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -9,7 +9,7 @@ h1 {
     color: rgb(114, 180, 219);
 }
 
-.registration-container .registration-form{
+.login-container .login-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@ h1 {
     border-radius: 12px;
 }
 
-.registration-container .registration-form button{
+.login-container .login-form button{
     width: 150px;
     height: 40px;
     font-weight: bold;
@@ -33,17 +33,22 @@ h1 {
     cursor: pointer;
 }
 
-.registration-container .registration-form .label-and-input{
+.login-container .login-form .sign-up{
+    text-decoration: none;
+    color: rgb(114, 180, 219);
+}
+
+.login-container .login-form .label-and-input{
     display: flex;
 }
 
-.registration-container .registration-form .label-and-input .label{
+.login-container .login-form .label-and-input .label{
     width: 100px;
     color: rgb(114, 180, 219);
     font-weight: bold;
 }
 
-.registration-container .registration-form .label-and-input input{
+.login-container .login-form .label-and-input input{
     border: none;
     border-radius: 12px;
     background-color: rgb(114, 180, 219);
