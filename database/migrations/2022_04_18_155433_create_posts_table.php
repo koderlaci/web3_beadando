@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            //$table->base64_encode()
             $table->string("fishName");
             $table->integer("price");
             $table->foreignId("seller_id");

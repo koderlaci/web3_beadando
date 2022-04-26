@@ -3,8 +3,13 @@ body {
     font-family: Roboto;
 }
 
+main {
+    padding-top: 100px;
+    background-image: linear-gradient(rgb(114, 180, 219), rgb(213, 242, 255));
+}
+
 .navbar {
-    position: fixed;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,6 +28,11 @@ body {
     cursor: pointer;
 }
 
+.navbar .item a{
+    text-decoration: none;
+    color: white;
+}
+
 .navbar .item:hover {
     color: rgb(217, 240, 252);
     transition: all 0.5s;
@@ -33,7 +43,6 @@ body {
     align-items: flex-end;
     height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgb(114, 180, 219), rgb(213, 242, 255));
 }
 
 .hero .wave{

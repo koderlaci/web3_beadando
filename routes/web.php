@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/welcome", [Controllers\WelcomeController::class, 'index']);
+Route::get("/welcome", [Controllers\WelcomeController::class, 'index'])->name("home");
+
+Route::get("/market", [Controllers\PostController::class, 'create'])->name("market");
+
+Route::post("/market", [Controllers\PostController::class, 'store']);
