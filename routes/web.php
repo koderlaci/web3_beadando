@@ -24,8 +24,12 @@ Route::get("/market", [Controllers\PostController::class, 'create'])->name("mark
 
 Route::get("/login", [Controllers\LoginController::class, 'show'])->name("login");
 
+Route::post("/login", [Controllers\LoginController::class, 'store'])->name("loginStore");
+
 Route::get("/registration", [Controllers\RegistrationController::class, 'show'])->name("registration");
 
 Route::post("/registration", [Controllers\RegistrationController::class, 'store'])->name("registrationStore");
+
+
 
 Route::post("/market", [Controllers\PostController::class, 'store']);
