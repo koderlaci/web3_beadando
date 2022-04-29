@@ -22,13 +22,15 @@ Route::get("/welcome", [Controllers\WelcomeController::class, 'index'])->name("h
 
 Route::get("/market", [Controllers\PostController::class, 'create'])->name("market");
 
-Route::get("/login", [Controllers\LoginController::class, 'show'])->name("login");
+Route::get("/login", [Controllers\LoginController::class, 'show'])->name("loginView");
 
-Route::post("/login", [Controllers\LoginController::class, 'store'])->name("loginStore");
+Route::post("/login", [Controllers\LoginController::class, 'login'])->name("login");
 
-Route::get("/registration", [Controllers\RegistrationController::class, 'show'])->name("registration");
+Route::get("/logout", [Controllers\LogoutController::class, 'logout'])->name("logout");
 
-Route::post("/registration", [Controllers\RegistrationController::class, 'store'])->name("registrationStore");
+Route::get("/registration", [Controllers\RegistrationController::class, 'show'])->name("registrationView");
+
+Route::post("/registration", [Controllers\RegistrationController::class, 'registration'])->name("registration");
 
 
 

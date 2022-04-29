@@ -7,7 +7,7 @@
             <h2>{{$errors->first()}}</h2>
             @endif
         </div>
-        <form action="{{ route('loginStore') }}" method="POST" class="login-form">
+        <form action="{{ route('login') }}" method="POST" class="login-form">
             @csrf
             <h1>Login</h1>
             <div class="label-and-input">

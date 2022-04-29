@@ -7,7 +7,7 @@
             <h2>{{$errors->first()}}</h2>
             @endif
         </div>
-        <form action="{{ route('registrationStore') }}" method="POST" class="registration-form">
+        <form action="{{ route('registration') }}" method="POST" class="registration-form">
             @csrf
             <h1>Registration</h1>
             <div class="label-and-input">

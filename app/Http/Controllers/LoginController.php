@@ -15,7 +15,7 @@ class LoginController extends Controller
         return view("login");
     }
 
-    public function store(Request $request)
+    public function login(Request $request)
     {
         $this->validate($request, [
             "email" => 'required',
@@ -25,6 +25,7 @@ class LoginController extends Controller
         $user = User::where('email','=',$request->email)->where('password','=',$request->password)->first();
 
         if ($user) {
+            Auth::login($user);
             Session::put('user', $user);
             $user=Session::get('user');
 

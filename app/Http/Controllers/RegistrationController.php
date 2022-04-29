@@ -12,7 +12,7 @@ class RegistrationController extends Controller
         return view("registration");
     }
 
-    public function store(Request $request)
+    public function registration(Request $request)
     {
         $request->validate([
             "email" => 'required|email',

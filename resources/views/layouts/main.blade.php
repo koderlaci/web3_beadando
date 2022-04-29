@@ -20,9 +20,16 @@
                     <a href="{{ URL::route('market'); }}">Market</a>
                 </span>
             </div>
+            @if (Auth::check())
+            <span class="item">
+                <a href="{{ route('logout') }}">Log out</a>
+            </span>
+                
+            @else
             <span class="item">
                 <a href="{{ URL::route('login'); }}">Sign in</a>
             </span>
+            @endif
         </div>
         <main>
             @yield('content')
