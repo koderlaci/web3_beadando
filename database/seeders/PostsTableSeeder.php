@@ -15,11 +15,11 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        Post::create(["fishName" => "Harcsa", "price" => 500, "seller_id" => 1]);
-        Post::create(["fishName" => "Pisztráng", "price" => 300, "seller_id" => 2]);
-        Post::create(["fishName" => "Süllő", "price" => 400, "seller_id" => 3]);
-        Post::create(["fishName" => "Mandarinhal", "price" => 600, "seller_id" => 4]);
-        Post::create(["fishName" => "Lazac", "price" => 800, "seller_id" => 5]);
+        Post::create(["fishName" => "Harcsa", "image" => "harcsa.jpg","price" => 500, "seller_id" => 1]);
+        Post::create(["fishName" => "Pisztráng", "image" => "pisztrang.jpg", "price" => 300, "seller_id" => 2]);
+        Post::create(["fishName" => "Süllő", "image" => "sullo.jpg", "price" => 400, "seller_id" => 3]);
+        Post::create(["fishName" => "Mandarinhal", "image" => "mandarinhal.jpg", "price" => 600, "seller_id" => 4]);
+        Post::create(["fishName" => "Lazac", "image" => "lazac.jpg", "price" => 800, "seller_id" => 5]);
 
     }
 }

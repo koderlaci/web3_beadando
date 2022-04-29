@@ -4,7 +4,7 @@
     <section class="market-container">
         @foreach ($posts as $post)
         <div class="post">
-            <div class="image"></div>
+            <img class="image" src="images/{{$post->image}}" alt="">
             <div class="details">
                 <div class="fishname">{{$post->fishName}}</div>
                 <div class="price-and-seller">

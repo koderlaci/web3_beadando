@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get("/welcome", [Controllers\WelcomeController::class, 'index'])->name("home");
 
-Route::get("/market", [Controllers\PostController::class, 'create'])->name("market");
+Route::get("/market", [Controllers\PostController::class, 'show'])->name("market");
 
 Route::get("/login", [Controllers\LoginController::class, 'show'])->name("loginView");
 

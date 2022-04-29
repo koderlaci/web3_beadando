@@ -24,10 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $posts = Post::orderBy("fishName")->get();
-        return view("market")->with([
-            "posts" => $posts,
-        ]);
+        //
     }
 
     /**
@@ -49,7 +46,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $posts = Post::orderBy("fishName")->get();
+        return view("market")->with([
+            "posts" => $posts,
+        ]);
     }
 
     /**
