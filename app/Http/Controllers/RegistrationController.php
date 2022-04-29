@@ -15,7 +15,7 @@ class RegistrationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "email" => 'required',
+            "email" => 'required|email',
             "username" => 'required',
             "password" => 'required',
         ]);

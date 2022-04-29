@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="registration-container">
+        <div class="error">
+            @if($errors->any())
+            <h2>{{$errors->first()}}</h2>
+            @endif
+        </div>
         <form action="{{ route('registrationStore') }}" method="POST" class="registration-form">
             @csrf
             <h1>Registration</h1>
@@ -26,4 +31,5 @@
             <button>Sign up</button>
         </form>
     </div>
+    <div class="footer"></div>
 @endsection

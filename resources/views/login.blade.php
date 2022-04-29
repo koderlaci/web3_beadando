@@ -2,9 +2,11 @@
 
 @section('content')
     <div class="login-container">
-        @if (count($errors) > 0)
-            <div class="div" stlye="height: 500px; background-color:red;">{{ $errors }}</div>
-        @endif
+        <div class="error">
+            @if($errors->any())
+            <h2>{{$errors->first()}}</h2>
+            @endif
+        </div>
         <form action="{{ route('loginStore') }}" method="POST" class="login-form">
             @csrf
             <h1>Login</h1>
@@ -24,4 +26,5 @@
             <div>Do not have an account? <a class="sign-up" href="{{ URL::route('registration'); }}">Sign up</a></div>
         </form>
     </div>
+    <div class="footer"></div>
 @endsection

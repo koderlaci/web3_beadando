@@ -1,12 +1,24 @@
 .registration-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
 }
 
 h1 {
     color: rgb(114, 180, 219);
+}
+
+.error {
+    width: 600px;
+    height: 100px;
+    text-align: center;
+}
+
+h2 {
+    color: red;
 }
 
 .registration-container .registration-form{
@@ -19,6 +31,7 @@ h1 {
     gap: 30px;
     background-color: white;
     border-radius: 12px;
+    margin-bottom: 100px;
 }
 
 .registration-container .registration-form button{
@@ -49,3 +62,7 @@ h1 {
     background-color: rgb(114, 180, 219);
 }
 
+.footer {
+    height: 20vh;
+    background-color: #0064a6;
+}

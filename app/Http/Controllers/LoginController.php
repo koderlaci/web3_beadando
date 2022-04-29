@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use Session;
+use Redirect;
 
 class LoginController extends Controller
 {
@@ -20,14 +22,16 @@ class LoginController extends Controller
             "password" => 'required',
         ]);
 
-        $user = User::where('email','=',$request->email)->first();
+        $user = User::where('email','=',$request->email)->where('password','=',$request->password)->first();
 
         if ($user) {
-            dd($user);
+            Session::put('user', $user);
+            $user=Session::get('user');
+
             return redirect()->route("home");
         }
         else {
-            return back()->with("error", "Incorrect email or password");
+            return Redirect::back()->withErrors(['msg' => 'Incorrect email or password.']);
         }
 
         return redirect()->route("home");
