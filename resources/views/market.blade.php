@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
 @section('content')
+    <h1 style="color: white; text-align: center;">The Fish Market</h1>
+    <form class="searchbar" action="{{ route('market') }}">
+        @csrf
+        <input name="searchValue" id="searchValue" type="text">
+        <button>Search</button>
+    </form>
     <section class="market-container">
-        <div class="searchbar">
-            <a href="{{ route('sellfish') }}">
-                <button>Sell fish</button>
-            </a>
-            <input type="text">
-            <button>Search</button>
-        </div>
+        @if (count($posts)>0)
         @foreach ($posts as $post)
         <div class="post">
             <img class="image" src="images/{{$post->image}}" alt="">
@@ -22,5 +22,8 @@
             </div>
         </div>
         @endforeach
+        @else
+            <h1>Could not found any fish</h1>
+        @endif
     </section>
 @endsection

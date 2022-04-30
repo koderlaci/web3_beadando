@@ -57,12 +57,20 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Request $request)
     {
-        $posts = Post::orderBy("fishName")->get();
-        return view("market")->with([
-            "posts" => $posts,
-        ]);
+        if ($request['searchValue']) {
+            $posts = Post::orderBy("fishName")->get()->where('fishName', 'Like', $request['searchValue']);
+            return view("market")->with([
+                "posts" => $posts,
+            ]);
+        }
+        else {
+            $posts = Post::orderBy("fishName")->get();
+            return view("market")->with([
+                "posts" => $posts,
+            ]);
+        }
     }
 
     public function showFish()

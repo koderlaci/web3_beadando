@@ -1,31 +1,35 @@
 .market-container {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     gap: 50px;
     width: 100%;
     padding-bottom: 50px;
+    min-height: 60vh;
 }
 
-.market-container .searchbar{
+.searchbar{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: auto;
+    margin-bottom: 50px;
     width: 700px;
     height: 100px;
     background-color: white;
     border-radius: 12px;
+    margin-top: 50px;
 }
 
-.market-container .searchbar input{
-    width: 75%;
+.searchbar input{
+    width: 70%;
 }
 
-.market-container .searchbar button{
+.searchbar button{
     border-radius: 6px;
     border: none;
     height: 25px;
+    width: 20%;
     background-color: rgb(114, 180, 219);
     color: white;
     cursor: pointer;
