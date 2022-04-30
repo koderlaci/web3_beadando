@@ -3,7 +3,7 @@
 @section('content')
     <section class="market-container">
         <div class="searchbar">
-            <a href="">
+            <a href="{{ route('sellfish') }}">
                 <button>Sell fish</button>
             </a>
             <input type="text">
@@ -15,8 +15,8 @@
             <div class="details">
                 <div class="fishname">{{$post->fishName}}</div>
                 <div class="price-and-seller">
-                    <div>Price: <span class="price">{{$post->price}}</span></div>
-                    <div>Seller: <span class="seller">{{$post->seller_id}}</span></div>
+                    <div>Price: <span class="price">{{$post->price}} $</span></div>
+                    <div>Seller: <span class="seller">{{ \App\Models\User::where(['id' => $post->seller_id])->pluck('username')[0] }}</span></div>
                     <button class="purchase-button">Purchase</button>
                 </div>
             </div>

@@ -1,0 +1,80 @@
+.sellfish-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+}
+
+h2 {
+    color: red;
+}
+
+.error {
+    width: 600px;
+    height: 100px;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(114, 180, 219);
+}
+
+.sellfish-container .sellfish-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+    gap: 30px;
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 100px;
+}
+
+.sellfish-container .sellfish-form button{
+    width: 150px;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 12px;
+    color: white;
+    margin-top: 20px;
+    background-color: rgb(114, 180, 219);
+    border: none;
+    cursor: pointer;
+}
+
+.sellfish-container .sellfish-form .sign-up{
+    text-decoration: none;
+    color: rgb(114, 180, 219);
+}
+
+.sellfish-container .sellfish-form .label-and-input{
+    display: flex;
+}
+
+.sellfish-container .sellfish-form .label-and-input .label{
+    width: 100px;
+    color: rgb(114, 180, 219);
+    font-weight: bold;
+}
+
+.sellfish-container .sellfish-form .label-and-input input{
+    border: none;
+    border-radius: 12px;
+    background-color: rgb(114, 180, 219);
+}
+
+.sellfish-container .sellfish-form .label-and-input select{
+    width: 170px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgb(114, 180, 219);
+}
+
+.footer {
+    height: 20vh;
+    background-color: #0064a6;
+}

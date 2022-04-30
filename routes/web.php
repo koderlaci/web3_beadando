@@ -22,6 +22,10 @@ Route::get("/welcome", [Controllers\WelcomeController::class, 'index'])->name("h
 
 Route::get("/market", [Controllers\PostController::class, 'show'])->name("market");
 
+Route::get("/sellfish", [Controllers\PostController::class, 'showFish'])->name("sellfish");
+
+Route::post("/sell", [Controllers\PostController::class, 'create'])->name("sell");
+
 Route::get("/login", [Controllers\LoginController::class, 'show'])->name("loginView");
 
 Route::post("/login", [Controllers\LoginController::class, 'login'])->name("login");

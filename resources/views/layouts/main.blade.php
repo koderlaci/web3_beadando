@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/market.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/registration.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/sellfish.css') }}" />
         <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300&family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -21,9 +22,15 @@
                 </span>
             </div>
             @if (Auth::check())
-            <span class="item">
-                <a href="{{ route('logout') }}">Log out</a>
-            </span>
+            <div>
+                <span class="item">
+                    <a href="{{ route('sellfish') }}">Sell fish</a>
+                </span>
+    
+                <span class="item">
+                    <a href="{{ route('logout') }}">Log out</a>
+                </span>
+            </div>
                 
             @else
             <span class="item">

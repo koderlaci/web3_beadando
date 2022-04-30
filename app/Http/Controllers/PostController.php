@@ -22,9 +22,22 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->validate([
+            "fishName" => 'required',
+            "image" => 'required',
+            "price" => 'required|integer',
+        ]);
+
+        Post::create([
+            'fishName' => $request["fishName"],
+            'image' => $request["image"],
+            "price" => $request["price"],
+            "seller_id" => auth()->user()->id,
+        ]);
+
+        return redirect()->route("market");
     }
 
     /**
@@ -50,6 +63,11 @@ class PostController extends Controller
         return view("market")->with([
             "posts" => $posts,
         ]);
+    }
+
+    public function showFish()
+    {
+        return view('sellfish');
     }
 
     /**
