@@ -8,6 +8,29 @@
     padding-bottom: 50px;
 }
 
+.market-container .searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 700px;
+    height: 100px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.market-container .searchbar input{
+    width: 75%;
+}
+
+.market-container .searchbar button{
+    border-radius: 6px;
+    border: none;
+    height: 25px;
+    background-color: rgb(114, 180, 219);
+    color: white;
+    cursor: pointer;
+}
+
 .market-container .post {
     display: flex;
     width: 300px;
@@ -22,7 +45,6 @@
     width: 40%;
     height: 100%;
     background-size: cover;
-    background-color: blueviolet;
 }
 
 .market-container .post .details {

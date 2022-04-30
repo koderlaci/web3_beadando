@@ -2,6 +2,13 @@
 
 @section('content')
     <section class="market-container">
+        <div class="searchbar">
+            <a href="">
+                <button>Sell fish</button>
+            </a>
+            <input type="text">
+            <button>Search</button>
+        </div>
         @foreach ($posts as $post)
         <div class="post">
             <img class="image" src="images/{{$post->image}}" alt="">
