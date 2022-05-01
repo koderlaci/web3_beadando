@@ -23,18 +23,18 @@
                 </span>
             </div>
             @if (Auth::check())
-            <div>
-                <span class="item">
-                    <a href="{{ route('sellfish') }}">Sell fish</a>
-                </span>
-                <span class="item">
-                    <a href="{{ route('myfishes') }}">My fishes</a>
-                </span>
-                <span class="item">
-                    <a href="{{ route('logout') }}">Log out</a>
-                </span>
+            <div style="display: flex; gap: 10px;">
+                <div style="margin-top: 10px; color: white; font-weight: bold;">{{ auth()->user()->username }}</div>
+                <div class="dropdown">
+                    <img class="dropbtn" style="height: 40px; margin-right: 20px;" src="{{ asset("/images/user.png") }}">
+                    <div class="dropdown-content">
+                        <a href="{{ route('sellfish') }}">Sell fish</a>
+                        <a href="{{ route('myfishes') }}">My fishes for sale</a>
+                        <a href="{{ route('fishCollection') }}">My fish collection</a>
+                        <a href="{{ route('logout') }}">Log out</a>
+                    </div>
+                  </div>
             </div>
-                
             @else
             <span class="item">
                 <a href="{{ URL::route('login'); }}">Sign in</a>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("image");
             $table->integer("price");
             $table->foreignId("seller_id");
+            $table->foreignId("owner_id")->default(0);
             $table->timestamps();
         });
     }

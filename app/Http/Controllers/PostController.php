@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Redirect;
 
 class PostController extends Controller
 {
@@ -34,7 +36,7 @@ class PostController extends Controller
             'fishName' => $request["fishName"],
             'image' => $request["image"],
             "price" => $request["price"],
-            "seller_id" => auth()->user()->id,
+            "seller_id" => auth()->user()->id
         ]);
 
         return redirect()->route("market");
@@ -60,13 +62,13 @@ class PostController extends Controller
     public function show(Request $request)
     {
         if ($request['searchValue']) {
-            $posts = Post::orderBy("fishName")->get()->where('fishName', 'Like', $request['searchValue']);
+            $posts = Post::orderBy("fishName")->get()->where('fishName', 'like', $request['searchValue'])->where('owner_id', "like", 0);
             return view("market")->with([
                 "posts" => $posts,
             ]);
         }
         else {
-            $posts = Post::orderBy("fishName")->get();
+            $posts = Post::orderBy("fishName")->where('owner_id', "like", 0)->get();
             return view("market")->with([
                 "posts" => $posts,
             ]);
@@ -96,9 +98,21 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function buyFish(Request $request)
     {
-        //
+        if(auth()->user()->money - $request["price"] >= 0) {
+            User::where('id', auth()->user()->id)->update([
+                "money" => auth()->user()->money - $request["price"],
+            ]);
+            Post::where('id', $request["postId"])->update([
+                "owner_id" => auth()->user()->id,
+            ]);
+
+            return redirect()->route("fishCollection");
+        }
+        else {
+            return Redirect::back()->withErrors(['msg' => 'You do not have enough money to buy this fish.']);
+        }
     }
 
     /**

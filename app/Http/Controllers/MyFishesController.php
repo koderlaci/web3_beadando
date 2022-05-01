@@ -14,6 +14,13 @@ class MyFishesController extends Controller
             ]);
     }
 
+    public function showFishCollection() {
+        $posts = Post::orderBy("fishName")->get()->where('owner_id', 'Like', auth()->user()->id);
+            return view("fishcollection")->with([
+                "posts" => $posts,
+            ]);
+    }
+
     public function update(Request $request) {
         $request->validate([
             "fishName" => 'required|string',

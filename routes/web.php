@@ -26,9 +26,13 @@ Route::get("/sellfish", [Controllers\PostController::class, 'showFish'])->name("
 
 Route::post("/sell", [Controllers\PostController::class, 'create'])->name("sell");
 
+Route::post("/buy", [Controllers\PostController::class, 'buyFish'])->name("buy");
+
 Route::get("/myfishes", [Controllers\MyFishesController::class, 'show'])->name("myfishes");
 
 Route::post("/myfishes", [Controllers\MyFishesController::class, 'update'])->name("update");
+
+Route::get("/fishcollection", [Controllers\MyFishesController::class, 'showFishCollection'])->name("fishCollection");
 
 Route::get("/login", [Controllers\LoginController::class, 'show'])->name("loginView");
 
