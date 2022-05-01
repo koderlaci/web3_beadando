@@ -1,0 +1,98 @@
+.myfishes-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    padding-bottom: 50px;
+    min-height: 80vh;
+    margin-top: 100px;
+}
+
+.myfishes-container .post {
+    display: flex;
+    width: 300px;
+    height: 100px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 5px 5px rgb(67, 67, 67);
+}
+
+.myfishes-container .post .image {
+    width: 40%;
+    height: 100%;
+    background-size: cover;
+}
+
+.myfishes-container .post .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+.myfishes-container .post .details .fishname{
+    width: 70%;
+    height: 30%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.myfishes-container .post .details .price-and-seller{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 70%;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.myfishes-container .post .details .price{
+    font-weight: bold;
+}
+
+.myfishes-container .post .details .seller{
+    width: 100%;
+}
+
+.myfishes-container .post .details .edit-button{
+    width: 50%;
+    height: 40px;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 10px;
+    background-color: rgb(114, 180, 219);
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .myfishes-container .post {
+        width: 700px;
+        height: 250px;
+    }
+
+    .myfishes-container .post .details .fishname{
+        font-size: 20px;
+    }
+    
+    .myfishes-container .post .details .price-and-seller{
+        gap: 20px;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .myfishes-container .post .details .edit-button{
+        height: 40px;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+}
