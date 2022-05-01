@@ -20,7 +20,8 @@
             <img class="image" src="images/{{$post->image}}">
             <div class="details">
                 <input type="text" style="display: none;" id="postId" name="postId" value="{{$post->id}}">
-                <input type="text" style="display: none;" id="price" name="price" value="{{$post->price}}">
+                <input type="number" style="display: none;" id="price" name="price" value="{{$post->price}}">
+                <input type="text" style="display: none;" id="sellerId" name="sellerId" value="{{$post->seller_id}}">
                 <div class="fishname">{{$post->fishName}}</div>
                 <div class="price-and-seller">
                     <div>Price: <span class="price">{{$post->price}} $</span></div>

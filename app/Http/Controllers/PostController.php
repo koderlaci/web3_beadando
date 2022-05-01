@@ -101,8 +101,13 @@ class PostController extends Controller
     public function buyFish(Request $request)
     {
         if(auth()->user()->money - $request["price"] >= 0) {
+            $sellerMoney = User::where('id', "like", $request["sellerId"])->value("money");
+
             User::where('id', auth()->user()->id)->update([
                 "money" => auth()->user()->money - $request["price"],
+            ]);
+            User::where('id', $request["sellerId"])->update([
+                "money" => $sellerMoney + $request["price"],
             ]);
             Post::where('id', $request["postId"])->update([
                 "owner_id" => auth()->user()->id,
