@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\FishPost;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Redirect;
@@ -32,7 +32,7 @@ class PostController extends Controller
             "price" => 'required|integer',
         ]);
 
-        Post::create([
+        FishPost::create([
             'fishName' => $request["fishName"],
             'image' => $request["image"],
             "price" => $request["price"],
@@ -56,19 +56,19 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\FishPost  $post
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request)
     {
         if ($request['searchValue']) {
-            $posts = Post::orderBy("fishName")->get()->where('fishName', 'like', $request['searchValue'])->where('owner_id', "like", 0);
+            $posts = FishPost::orderBy("fishName")->get()->where('fishName', 'like', $request['searchValue'])->where('owner_id', "like", 0);
             return view("market")->with([
                 "posts" => $posts,
             ]);
         }
         else {
-            $posts = Post::orderBy("fishName")->where('owner_id', "like", 0)->get();
+            $posts = FishPost::orderBy("fishName")->where('owner_id', "like", 0)->get();
             return view("market")->with([
                 "posts" => $posts,
             ]);
@@ -83,10 +83,10 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\FishPost  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(FishPost $post)
     {
         //
     }
@@ -95,7 +95,7 @@ class PostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\FishPost  $post
      * @return \Illuminate\Http\Response
      */
     public function buyFish(Request $request)
@@ -109,7 +109,7 @@ class PostController extends Controller
             User::where('id', $request["sellerId"])->update([
                 "money" => $sellerMoney + $request["price"],
             ]);
-            Post::where('id', $request["postId"])->update([
+            FishPost::where('id', $request["postId"])->update([
                 "owner_id" => auth()->user()->id,
             ]);
 
@@ -123,10 +123,10 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\FishPost  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(FishPost $post)
     {
         //
     }

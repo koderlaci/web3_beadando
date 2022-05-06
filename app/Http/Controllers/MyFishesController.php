@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\FishPost;
 
 class MyFishesController extends Controller
 {
     public function show() {
-        $posts = Post::orderBy("fishName")->get()->where('seller_id', 'Like', auth()->user()->id);
+        $posts = FishPost::orderBy("fishName")->get()->where('seller_id', 'Like', auth()->user()->id);
             return view("myfishes")->with([
                 "posts" => $posts,
             ]);
     }
 
     public function showFishCollection() {
-        $posts = Post::orderBy("fishName")->get()->where('owner_id', 'Like', auth()->user()->id);
+        $posts = FishPost::orderBy("fishName")->get()->where('owner_id', 'Like', auth()->user()->id);
             return view("fishcollection")->with([
                 "posts" => $posts,
             ]);
@@ -27,7 +27,7 @@ class MyFishesController extends Controller
             "price" => 'required|integer'
         ]);
 
-        Post::where('id', $request["id"])->update([
+        FishPost::where('id', $request["id"])->update([
             'fishName' => $request["fishName"],
             "price" => $request["price"]
         ]);

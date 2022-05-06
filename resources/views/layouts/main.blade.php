@@ -30,7 +30,7 @@
                     <div class="dropdown-content">
                         <a href="{{ route('sellfish') }}">Sell fish</a>
                         <a href="{{ route('myfishes') }}">My fishes for sale</a>
-                        <a href="{{ route('fishCollection') }}">My fish collection</a>
+                        <a href="{{ route('fishCollection') }}">My collection</a>
                         <a href="{{ route('logout') }}">Log out</a>
                     </div>
                   </div>

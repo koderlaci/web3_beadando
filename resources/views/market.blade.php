@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1 style="color: white; text-align: center;">The Fish Market</h1>
+    <h1 style="color: white; text-align: center;">The Market</h1>
     <form class="searchbar" action="{{ route('market') }}">
         @csrf
         <input name="searchValue" id="searchValue" type="text">
