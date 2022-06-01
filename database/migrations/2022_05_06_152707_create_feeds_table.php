@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fish_posts', function (Blueprint $table) {
+        Schema::create('feed_posts', function (Blueprint $table) {
             $table->id();
-            $table->string("fishName");
+            $table->string("feedName");
             $table->string("image");
             $table->integer("price");
             $table->foreignId("seller_id");
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fish_posts');
+        Schema::dropIfExists('feed_posts');
     }
 };

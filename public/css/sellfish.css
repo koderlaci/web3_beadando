@@ -7,6 +7,41 @@
     height: 80vh;
 }
 
+.sellfish-container .chooser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sellfish-container .chooser .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sellfish-container .chooser h1{
+    color: white;
+}
+
+.sellfish-container .chooser .options button{
+    width: 200px;
+    height: 100px;
+    border-radius: 12px;
+    background-color: rgb(114, 180, 219);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.sellfish-container .chooser .options button:hover{
+    background-color: rgb(170, 224, 255);
+}
+
 h2 {
     color: red;
 }

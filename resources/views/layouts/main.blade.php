@@ -28,8 +28,8 @@
                 <div class="dropdown">
                     <img class="dropbtn" style="height: 40px; margin-right: 20px;" src="{{ asset("/images/user.png") }}">
                     <div class="dropdown-content">
-                        <a href="{{ route('sellfish') }}">Sell fish</a>
-                        <a href="{{ route('myfishes') }}">My fishes for sale</a>
+                        <a href="{{ route('sellfish') }}">Sell</a>
+                        <a href="{{ route('myfishes') }}">My items for sale</a>
                         <a href="{{ route('fishCollection') }}">My collection</a>
                         <a href="{{ route('logout') }}">Log out</a>
                     </div>

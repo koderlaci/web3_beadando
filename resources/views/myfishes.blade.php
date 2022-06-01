@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1 style="color: white; text-align: center;">My fishes</h1>
+    <h1 style="color: white; text-align: center;">My items</h1>
     <section class="myfishes-container">
         @if (count($posts)>0)
         @foreach ($posts as $post)
-        <form class="post" action="" method="POST">
+        <form class="post" action="{{ route('update') }}" method="POST">
             @csrf
             <img class="image" src="images/{{$post->image}}" alt="">
             <div class="details">
@@ -22,7 +22,7 @@
         </form>
         @endforeach
         @else
-            <h1>You do not have any fish for sale.</h1>
+            <h1>You do not have any fish or feed for sale.</h1>
         @endif
     </section>
 @endsection

@@ -20,6 +20,5 @@ class FishPostsTableSeeder extends Seeder
         FishPost::create(["fishName" => "Süllő", "image" => "sullo.jpg", "price" => 400, "seller_id" => 3]);
         FishPost::create(["fishName" => "Mandarinhal", "image" => "mandarinhal.jpg", "price" => 600, "seller_id" => 4]);
         FishPost::create(["fishName" => "Lazac", "image" => "lazac.jpg", "price" => 800, "seller_id" => 5]);
-
     }
 }
