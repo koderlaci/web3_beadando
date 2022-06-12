@@ -26,7 +26,7 @@
                 <div class="price-and-seller">
                     <div>Price: <span class="price">{{$post->price}} $</span></div>
                     <div>Seller: <span class="seller">{{ \App\Models\User::where(['id' => $post->seller_id])->pluck('username')[0] }}</span></div>
-                    @if (auth()->user()->id != $post->seller_id)
+                    @if (Auth::check() && auth()->user()->id != $post->seller_id)
                         <button class="purchase-button">Purchase</button>
                     @endif
                 </div>
