@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('feeds', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string("feedName");
-            $table->string("image");
-            $table->integer("price");
+            $table->string("userId");
+            $table->integer("amount");
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feed_posts');
+        Schema::dropIfExists('order');
     }
 };

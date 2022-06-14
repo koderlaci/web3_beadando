@@ -56,5 +56,8 @@ Route::post("/myfishes", [Controllers\MyFishesController::class, 'update'])->nam
 
 Route::get("/myfishes/{id}/delete", [Controllers\MyFishesController::class, 'delete'])->name("delete");
 
+//feeds controls
 
+Route::get("/feeds", [Controllers\FeedController::class, 'show'])->name("feeds");
 
+Route::post("/feeds", [Controllers\FeedController::class, 'buyFeed'])->name("buyFeed");

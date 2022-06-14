@@ -21,6 +21,9 @@
                 <span class="item">
                     <a href="{{ URL::route('market'); }}">Market</a>
                 </span>
+                <span class="item">
+                    <a href="{{ URL::route('feeds'); }}">Feeds</a>
+                </span>
             </div>
             @if (Auth::check())
             <div style="display: flex; gap: 10px;">

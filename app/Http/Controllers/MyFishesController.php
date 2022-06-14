@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FishPost;
+use App\Models\Feed;
+use App\Models\Order;
 
 class MyFishesController extends Controller
 {
@@ -16,8 +18,13 @@ class MyFishesController extends Controller
 
     public function showFishCollection() {
         $posts = FishPost::orderBy("fishName")->get()->where('owner_id', 'Like', auth()->user()->id);
+        $feeds = Feed::get();
+        $amount = Order::where('userId', auth()->user()->id)->pluck('amount')->first();
+
             return view("fishcollection")->with([
                 "posts" => $posts,
+                "feeds" => $feeds,
+                "amount" => $amount
             ]);
     }
 
