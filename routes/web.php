@@ -50,8 +50,11 @@ Route::post("/market", [Controllers\PostController::class, 'store']);
 
 Route::get("/myfishes", [Controllers\MyFishesController::class, 'show'])->name("myfishes");
 
+Route::get("/fishcollection", [Controllers\MyFishesController::class, 'showFishCollection'])->name("fishCollection");
+
 Route::post("/myfishes", [Controllers\MyFishesController::class, 'update'])->name("update");
 
-Route::get("/fishcollection", [Controllers\MyFishesController::class, 'showFishCollection'])->name("fishCollection");
+Route::get("/myfishes/{id}/delete", [Controllers\MyFishesController::class, 'delete'])->name("delete");
+
 
 

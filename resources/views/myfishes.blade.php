@@ -5,18 +5,21 @@
     <section class="myfishes-container">
         @if (count($posts)>0)
         @foreach ($posts as $post)
-        <form class="post" action="{{ route('update') }}" method="POST">
+        <form class="post" method="POST">
             @csrf
             <img class="image" src="images/{{$post->image}}" alt="">
             <div class="details">
                 <input type="text" style="display: none;" id="id" name="id" value="{{$post->id}}">
-                <input type="text" class="fishname" id="fishName" name="fishName" placeholder="{{$post->fishName}}">
+                <input type="text" class="fishname" id="fishName" name="fishName" value="{{$post->fishName}}">
                 <div class="price-and-seller">
                     <div>Price:
-                        <input type="text" class="price" id="price" name="price" placeholder="{{$post->price}}">
+                        <input type="text" class="price" id="price" name="price" value="{{$post->price}}">
                     </div>
                     <div>Seller: <span class="seller"><strong>you</strong></span></div>
-                    <button class="edit-button">Edit</button>
+                    <div style="display: flex; justify-content: space-around;">
+                        <button class="edit-button">Edit</button>
+                        <a class="delete-button" href="{{ route('delete', $post->id) }}">Delete</a>
+                    </div>
                 </div>
             </div>
         </form>

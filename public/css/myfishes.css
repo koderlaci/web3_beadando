@@ -61,9 +61,8 @@
 }
 
 .myfishes-container .post .details .edit-button{
-    width: 50%;
+    width: 40%;
     height: 40px;
-    margin: auto;
     cursor: pointer;
     border-radius: 12px;
     font-size: 10px;
@@ -71,7 +70,23 @@
     color: white;
     font-weight: bold;
     border: none;
-    margin-bottom: 5px;
+}
+
+.myfishes-container .post .details .delete-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 10px;
+    background-color: rgb(114, 180, 219);
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    font-size: 15px;
 }
 
 @media (min-width: 768px) {

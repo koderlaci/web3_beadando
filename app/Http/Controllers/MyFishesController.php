@@ -34,4 +34,10 @@ class MyFishesController extends Controller
 
         return redirect()->route("market");
     }
+
+    public function delete(Request $request) {
+        FishPost::where('id', $request["id"])->delete();
+
+        return redirect()->route("market");
+    }
 }
